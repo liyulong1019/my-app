@@ -1,0 +1,23 @@
+.tcs_piece {
+  width: 10px;
+  height: 10px;
+}
+.tcs {
+  &-content {
+    padding: 16px;
+  }
+  &-row {
+    display: flex;
+    justify-content: center;
+  }
+  &-piece {
+    &-0 {
+      .tcs_piece();
+      background-color: antiquewhite;
+    }
+    &-1 {
+      .tcs_piece();
+      background-color: rgb(19, 221, 106);
+    }
+  }
+}
