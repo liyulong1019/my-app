@@ -7,9 +7,12 @@ import "./index.less";
 export default function Quotes() {
   const [quotes, setQuotes] = useState({});
   useEffect(() => {
-    axios.get("http://127.0.0.1:1111/quotes").then((res) => {
-      setQuotes(res.data);
-    });
+    axios
+      .get("http://127.0.0.1:1111/quotes")
+      .then((res) => {
+        setQuotes(res.data);
+      })
+      .catch();
   }, []);
 
   const audioPlay = (src) => {

@@ -5,7 +5,7 @@ import { Button, Result } from "antd";
 export default function ErrorPage() {
   const error = useRouteError();
   const navigate = useNavigate();
-  console.error(error);
+  console.error(111, error);
 
   return (
     <Result

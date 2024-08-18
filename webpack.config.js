@@ -14,6 +14,7 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist"),
     publicPath: "/",
+    assetModuleFilename: "images/[hash][ext][query]",
   },
 
   resolve: {
@@ -44,17 +45,15 @@ module.exports = {
         ], // 使用Babel转换ES6+语法
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i, // 匹配图像和字体文件
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "assets/", // 输出文件夹相对路径
-              publicPath: "../assets/", // 对于生成的 URL 的公共路径
-              name: "[name].[hash].[ext]", // 输出文件名格式，包括原始文件名、哈希值和扩展名
-            },
-          },
-        ],
+        test: /\.(png|jpg|jpeg|gif)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {},
+        },
       },
       {
         test: /\.less$/, // 匹配.less文件

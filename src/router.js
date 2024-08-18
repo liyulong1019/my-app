@@ -12,6 +12,7 @@ import Games from "./modules/games/list";
 import Tcs from "./modules/games/贪吃蛇";
 import Wzq from "./modules/games/五子棋";
 import ErrorPage from "./modules/home/ErrorPage";
+import Elsfk from "./modules/games/俄罗斯方块";
 
 export const routers = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const routers = createBrowserRouter([
   {
     path: "games/五子棋",
     element: <Wzq />,
+  },
+  {
+    path: "games/俄罗斯方块",
+    element: <Elsfk />,
   },
   {
     path: "about",

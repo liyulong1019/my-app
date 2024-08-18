@@ -34,7 +34,7 @@ export default function List(props) {
     },
     {
       name: "贪吃蛇",
-      path: "/games/贪吃蛇",
+      path: "/games/俄罗斯方块",
     },
     {
       name: "贪吃蛇",
